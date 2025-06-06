@@ -8,5 +8,43 @@ MADF-Net is a novel deep learning framework designed for liver tumor segmentatio
 - **Input-Level Fusion**: Concatenates multi-phase CT images along the channel dimension:  
   ```math
   I_{\text{FUSION}} = \text{Concate}(I_{\text{ART}}, I_{\text{DL}}, I_{\text{PV}})
+- **Feature-Level Fusion**: Employs self-attention mechanisms to dynamically weight features from different phases:
 
+F_{\text{FUSION}} = W_{\text{ART}} \ast F_{\text{ART}} + W_{\text{PV}} \ast F_{\text{PV}} + W_{\text{DL}} \ast F_{\text{DL}}
   
+- **Decision-Level Fusion**: Fuses predictions from individual phases and the fusion branch to generate the final segmentation mask:
+O^{\text{FINAL}} = F_d(O^{\text{ART}}, O^{\text{DL}}, O^{\text{PV}}, O^{\text{FUSION}})
+
+### 2. BED-Loss Function
+A dynamically weighted loss combining Cross-Entropy Loss, Dice Loss, and Boundary Loss to address class imbalance and boundary ambiguity:
+
+\text{Loss} = \alpha \cdot L_{\text{Dice}} + \beta \cdot L_{\text{CE}} + \gamma \cdot L_{\text{BL}}
+
+- **Boundary Loss (BL)** measures the spatial distance between predicted and ground truth boundaries using a distance map:
+
+\mathcal{L}_{\text{boundary}} = \int_{\Omega} y_i \cdot |\phi_G(x)| dx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
