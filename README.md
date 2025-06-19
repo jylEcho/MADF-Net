@@ -1,14 +1,12 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
 
-## Paper Information  
-- **Title**: MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
-- **Journal**: IEEE Transactions on Medical Imaging  
-- **Year**: 2020  
-- **File**: TMI_coperwith_JJN.pdf  
-
 ## Pre-trained Weights  
 [Google Drive](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxWxW?usp=drive_link)  
 
+## Paper Information  
+- **Title**: MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
+- **Journal**: IEEE Transactions on Medical Imaging  
+- **Year**: 2025 
 
 ## Core Innovations  
 ### 1. MADF-Net Architecture  
