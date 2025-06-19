@@ -6,6 +6,9 @@
 - **Year**: 2020  
 - **File**: TMI_coperwith_JJN.pdf  
 
+## Pre-trained Weights  
+[Google Drive](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxWxW?usp=drive_link)  
+
 
 ## Core Innovations  
 ### 1. MADF-Net Architecture  
@@ -62,8 +65,6 @@ Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting:
 | Combined         | +2.47               | -3.2693        |  
 
 
-## Pre-trained Weights  
-[Google Drive](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxWxW?usp=drive_link)  
 
 
 ## Citation  
