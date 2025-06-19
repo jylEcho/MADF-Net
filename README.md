@@ -65,12 +65,4 @@ Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting:
 
 
 
-## Citation  
-```bibtex
-@article{madfnet_2020,
-  title={MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation},
-  author={First A. Author, Second B. Author, Third C. Author},
-  journal={IEEE Transactions on Medical Imaging},
-  year={2020},
-  file={TMI_coperwith_JJN.pdf}
-}
+
