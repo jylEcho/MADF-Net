@@ -1,46 +1,30 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
 
-## Pre-trained Weights  
-[Google Drive](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxWxW?usp=drive_link)  
-
 ## Paper Information  
 - **Title**: MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
 - **Journal**: IEEE Transactions on Medical Imaging  
 - **Year**: 2025 
 
+## Pre-trained Weights  
+[Google Drive](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxW?usp=drive_link)  
+
+## Training Process
+
+All models were trained for 450 epochs with a batch size of 8. The Stochastic Gradient Descent (SGD) optimizer was adopted with a learning rate of 0.00011 and 4 parallel data loading workers.The initial weights of BED-Loss in Eq. (10) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
+(The proposed method was implemented on a Linux 5.4.0 system using PyTorch 1.13.1. All experiments were conducted on two NVIDIA GeForce RTX 3090 GPUs (24 GB × 2), providing sufficient computational resources for efficient model training and evaluation.)
+
 ## Core Innovations  
 ### 1. MADF-Net Architecture  
 - **Input-Level Fusion**: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images:  
-  \[ 
-  I_{\text{FUSION}} = \text{Concatenate}(I_{\text{ART}}, I_{\text{DL}}, I_{\text{PV}}) 
-  \]  
+
 - **Feature-Level Fusion**: Employs self-attention to dynamically weight phase-specific features:  
-  \[ 
-  F_{\text{FUSION}} = W_{\text{ART}} \cdot F_{\text{ART}} + W_{\text{PV}} \cdot F_{\text{PV}} + W_{\text{DL}} \cdot F_{\text{DL}} 
-  \]  
-  Weights are learned via a shared key-query mechanism:  
-  \[
-  \begin{aligned} 
-  W_{\text{ART}} &= \text{softmax}\left(\frac{Q_{\text{ART}}^{P} \cdot (K_{\text{ART}}^{P})^{\top}}{\sqrt{d_{k}}}\right), \\
-  W_{\text{PV}} &= \text{softmax}\left(\frac{Q_{\text{PV}}^{P} \cdot (K_{\text{PV}}^{P})^{\top}}{\sqrt{d_{k}}}\right), \\
-  W_{\text{DL}} &= \text{softmax}\left(\frac{Q_{\text{DL}}^{P} \cdot (K_{\text{DL}}^{P})^{\top}}{\sqrt{d_{k}}}\right)
-  \end{aligned}
-  \]  
+
 - **Decision-Level Fusion**: Fuses predictions from individual phases and the fusion branch:  
-  \[ 
-  O^{\text{FINAL}} = F_{d}(O^{\text{ART}}, O^{\text{DL}}, O^{\text{PV}}, O^{\text{FUSION}}) 
-  \]  
 
 ### 2. Boundary-Enhanced Dynamic Loss (BED-Loss)  
-Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting:  
-\[ 
-\text{Loss} = \alpha \cdot L_{\text{Dice}} + \beta \cdot L_{\text{CE}} + \gamma \cdot L_{\text{BL}} 
-\]  
-- **Boundary Loss** measures pixel-wise distance to ground truth boundaries:  
-  \[ 
-  \mathcal{L}_{\text{boundary}} = \int_{\Omega} y_{i} \cdot \left| \phi_{G}(x) \right| \, dx 
-  \]  
+Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. 
 
+- **Boundary Loss** measures pixel-wise distance to ground truth boundaries. 
 
 ## Experimental Results  
 ### Datasets  
