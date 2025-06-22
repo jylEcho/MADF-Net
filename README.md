@@ -19,9 +19,7 @@ If the training loss plateaus for 10 epochs, the weights are dynamically adjuste
 ## Core Innovations  
 ### 1. MADF-Net Architecture  
 - **Input-Level Fusion**: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images. 
-
 - **Feature-Level Fusion**: Employs self-attention to dynamically weight phase-specific features.
-
 - **Decision-Level Fusion**: Fuses predictions from individual phases and the fusion branch.  
 
 ### 2. Boundary-Enhanced Dynamic Loss (BED-Loss)  
@@ -35,12 +33,6 @@ Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting.
 |---------|--------------|---------|-----------------|---------------------|  
 | LiTS2017| Single (PV)  | 131     | Publicly available | -                   |  
 | MPLL    | Multi (ART/PV/DL) | 141   | ITK-SNAP        | B-spline            |  
-
-### Key Metrics Comparison  
-| Method       | Phases       | DSC (%) | Jaccard | HD₉₅   | ASSD    |  
-|--------------|--------------|---------|---------|--------|---------|  
-| Single-Phase (PV)| PV          | 78.28   | 0.6431  | 3.4972 | 4.37    |  
-| MADF-Net     | All Phases   | **80.99**| **0.6805**|**2.5948**|**4.26**|  
 
 ### Ablation Studies  
 | Components       | DSC Improvement (%) | HD₉₅ Reduction |  
