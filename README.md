@@ -6,7 +6,7 @@
 - **Year**: 2025 
 
 ## Pre-trained Weights  
-[Google Drive](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxW?usp=drive_link)  
+The weights of the pre-trained MADF-Net could be downloaded [Here](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxW?usp=drive_link)  
 
 ## Training Process
 
