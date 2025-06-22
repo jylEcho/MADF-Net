@@ -10,10 +10,7 @@ The weights of the pre-trained MADF-Net could be downloaded [Here](https://drive
 
 ## Training Process
 
-All models were trained for 450 epochs with a batch size of 8. The Stochastic Gradient Descent (SGD) optimizer was adopted with a learning rate of 0.00011 and 4 parallel data loading workers.The initial weights of BED-Loss in Eq. (10) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. 
-
-If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
-
+All models were trained for 450 epochs with a batch size of 8. The Stochastic Gradient Descent (SGD) optimizer was adopted with a learning rate of 0.00011 and 4 parallel data loading workers.
 (The proposed method was implemented on a Linux 5.4.0 system using PyTorch 1.13.1. All experiments were conducted on two NVIDIA GeForce RTX 3090 GPUs (24 GB × 2), providing sufficient computational resources for efficient model training and evaluation.)
 
 ## Core Innovations  
@@ -25,7 +22,7 @@ If the training loss plateaus for 10 epochs, the weights are dynamically adjuste
 ### 2. Boundary-Enhanced Dynamic Loss (BED-Loss)  
 Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. 
 
-- **Boundary Loss** measures pixel-wise distance to ground truth boundaries. 
+The initial weights of BED-Loss in Eq. (10) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
 ## Experimental Results  
 ### Datasets  
