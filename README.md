@@ -1,17 +1,15 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
 
-## Paper Information  
-- **Title**: MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
-- **Journal**: IEEE Transactions on Medical Imaging  
-- **Year**: 2025 
-
 ## Pre-trained Weights  
-The weights of the pre-trained MADF-Net could be downloaded [Here](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxW?usp=drive_link)  
+The weights of the pre-trained MADF-Net in 1P、2P、3P comparative analysis could be downloaded [Here](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxW?usp=drive_link)  
 
-## Training Process
+## Installation
+Linux 5.4.0
+1、Create a virtual environment: conda create -n environment_name python=3.8 -y and conda activate environment_name.
+2、Install Pytorch : pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 --index-url https://download.pytorch.org/whl/cu117
 
+## Implementation Details
 All models were trained for 450 epochs with a batch size of 8. The Stochastic Gradient Descent (SGD) optimizer was adopted with a learning rate of 0.00011 and 4 parallel data loading workers.
-(The proposed method was implemented on a Linux 5.4.0 system using PyTorch 1.13.1. All experiments were conducted on two NVIDIA GeForce RTX 3090 GPUs (24 GB × 2), providing sufficient computational resources for efficient model training and evaluation.)
 
 ## Core Innovations  
 ### 1. MADF-Net Architecture  
