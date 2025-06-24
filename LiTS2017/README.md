@@ -28,5 +28,5 @@ pydensecrf==1.0rc3
       - .png
   - trainImage_lits2017_png
       - .png
-### 3 Other datasets
+### 4 Other datasets
 - Other datasets just similar to LiTS2017
