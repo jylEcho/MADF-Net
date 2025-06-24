@@ -13,7 +13,7 @@ SimpleITK==1.0.1
 pydensecrf==1.0rc3
 ```
 ### 2 DataSet
-- The LiTS2017 datasets can be downloaded {[here:](https://competitions.codalab.org/competitions/17094)}.
+- The LiTS2017 datasets can be downloaded [here](https://competitions.codalab.org/competitions/17094).
 ### 3 Runing the code
 - After downloading the datasets, you should run ./data_prepare/preprocess_lits2017_png.py to convert .nii files into .png files for training. (Save the downloaded LiTS2017 datasets in the data folder in the following format.)
 - './data_prepare/'
