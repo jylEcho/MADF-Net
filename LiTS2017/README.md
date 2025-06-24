@@ -5,7 +5,6 @@ The Liver Tumor Segmentation Benchmark (LiTS2017) is an open - access dataset fo
 - The LiTS2017 datasets can be downloaded here: {[LiTS2017](https://competitions.codalab.org/competitions/17094)}.
 - After downloading the datasets, you should run ./data_prepare/preprocess_lits2017_png.py to convert .nii files into .png files for training. (Save the downloaded LiTS2017 datasets in the data folder in the following format.)
 
-- After downloading the datasets, you should run ./data_prepare/preprocess_lits2017_png.py to convert .nii files into .png files for training. (Save the downloaded LiTS2017 datasets in the data folder in the following format.)
 
 - './data_prepare/'
   - preprocess_lits2017_png.py
