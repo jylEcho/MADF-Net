@@ -8,12 +8,18 @@
 
 <img src="https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png?raw=true" width="500">
 
-## Core Innovations： 
+## Contrast-Enhanced CT (CECT)： 
 
 Contrast-enhanced CT (CECT), which captures dynamic tissue attenuation changes through contrast agent administration at different time points, offers a more informative alternative. It typically includes non-contrast (NC), arterial (ART), portal venous (PV), and delayed (DL) phases. These phases provide complementary information such as early vascular features, clear hepatic parenchyma structure, hyper-perfused regions, and delayed enhancement or washout effects, all of which help delineate lesion boundaries and improve segmentation accuracy. 
 
 The complementary nature of these phases presents a valuable opportunity to improve segmentation performance through multi-phase fusion. 
-## The existing fusion approaches's shortcoming：
+
+## Existing Fusion Method： 
+Input-Level Fusion: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images.
+Feature-Level Fusion: Employs self-attention to dynamically weight phase-specific features.
+Decision-Level Fusion: Fuses predictions from individual phases and the fusion branch.
+
+## The existing fusion methods's shortcoming：
 
 Treating each phase equally during fusion, failing to account for their clinical significance and complementary properties. This results in suboptimal performance, especially in scenarios with blurred lesion boundaries or small tumors.
 
