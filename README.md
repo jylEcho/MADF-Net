@@ -1,6 +1,14 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
 
-<img src="https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png?raw=true" width="500">
+## Datasets  
+| Dataset | Phases       | Samples | Annotation Tool | Registration Method |  
+|---------|--------------|---------|-----------------|---------------------|  
+| [LiTS2017](https://competitions.codalab.org/competitions/17094)| Single (PV)  | 131     | Publicly available | -                   |  
+| MPLL    | Multi (ART/PV/DL) | 141   | ITK-SNAP        | B-spline            |  
+
+<div align="center">
+  <img src="https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png?raw=true" width="500">
+</div>
 
 ## Core Innovations： 
 ### MADF-Net Architecture  
@@ -11,17 +19,9 @@
 ### Boundary-Enhanced Dynamic Loss (BED-Loss)  
 Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. The initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
-## Datasets  
-| Dataset | Phases       | Samples | Annotation Tool | Registration Method |  
-|---------|--------------|---------|-----------------|---------------------|  
-| [LiTS2017](https://competitions.codalab.org/competitions/17094)| Single (PV)  | 131     | Publicly available | -                   |  
-| MPLL    | Multi (ART/PV/DL) | 141   | ITK-SNAP        | B-spline            |  
-
 ## Experiments：Single-Phase & Multi-Phase
 - **一、 Multi-Phase Experiments：In the MPLL folder**
 - **二、Single-Phase Experiments：In the LiTS2017 folder**
-
-
 
 ##  一、Multi-Phase Experiments
 
