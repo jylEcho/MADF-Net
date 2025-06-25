@@ -3,7 +3,7 @@
 ## Pre-trained Weights  
 The weights of the pre-trained MADF-Net in 1P、2P、3P comparative analysis could be downloaded [Here](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxW?usp=drive_link)  
 
-## 1、Installation 
+## 1、Create your conda environment
 1、environments:Linux 5.4.0
 
 2、Create a virtual environment: conda create -n environment_name python=3.8 -y and conda activate environment_name.
@@ -22,11 +22,11 @@ The weights of the pre-trained MADF-Net in 1P、2P、3P comparative analysis cou
 
 - 3.2  Using the ./dataset/dataset_multiphase.py loader if you want to train without loading the distance map, or the dataset/dataset_multiphase_boundarymap.py loader if you want to load the distance map during training.
 
-## 4、Training Process（运行bash/train_multiphase.sh，运行中的权重保存在在model_out文件夹中）
+## 4、Training Process
 
 4.1  The model is trained by running ./bash/train_multiphase.sh (You can modify the hyperparameters as prompted.), and the weights of its runs are stored in the model_out folder.
 
-## 5、Evalution（运行bash/evaluate.sh，把训练权重和测试数据地址在evaluate.sh中进行替换，得到测试结果，结果保存在model_out中）
+## 5、Evalution
 
 5.1  Run ./bash/evaluate.sh, replacing the training weights and test data addresses in evaluate.sh. The test results will be saved in the model_out folder for viewing.
 
