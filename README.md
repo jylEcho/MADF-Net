@@ -1,4 +1,7 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
+
+![](https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png)
+
 ## Core Innovations： 
 ### MADF-Net Architecture  
 - **Input-Level Fusion**: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images. 
