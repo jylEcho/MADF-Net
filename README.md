@@ -1,6 +1,6 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
 
-![](https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png)
+<img src="https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png?raw=true" width="500">
 
 ## Core Innovations： 
 ### MADF-Net Architecture  
