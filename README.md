@@ -11,7 +11,7 @@ Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. The ini
 ## Datasets  
 | Dataset | Phases       | Samples | Annotation Tool | Registration Method |  
 |---------|--------------|---------|-----------------|---------------------|  
-| LiTS2017| Single (PV)  | 131     | Publicly available | -                   |  
+| [LiTS2017](https://competitions.codalab.org/competitions/17094)| Single (PV)  | 131     | Publicly available | -                   |  
 | MPLL    | Multi (ART/PV/DL) | 141   | ITK-SNAP        | B-spline            |  
 
 ## Experiments：Single-Phase & Multi-Phase
