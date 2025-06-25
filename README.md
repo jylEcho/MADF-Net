@@ -1,27 +1,22 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
-
 ## Core Innovations： 
-
 ### MADF-Net Architecture  
 - **Input-Level Fusion**: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images. 
 - **Feature-Level Fusion**: Employs self-attention to dynamically weight phase-specific features.
 - **Decision-Level Fusion**: Fuses predictions from individual phases and the fusion branch.  
 
 ### Boundary-Enhanced Dynamic Loss (BED-Loss)  
-Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. 
+Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. The initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
-## Experiments：Single-Phase & Multi-Phase
-1. Multi-Phase Experiments：
-2. Single-Phase Experiments：To
-The initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
- 
-## Experimental Results  
-### Datasets  
+## Datasets  
 | Dataset | Phases       | Samples | Annotation Tool | Registration Method |  
 |---------|--------------|---------|-----------------|---------------------|  
 | LiTS2017| Single (PV)  | 131     | Publicly available | -                   |  
 | MPLL    | Multi (ART/PV/DL) | 141   | ITK-SNAP        | B-spline            |  
 
+## Experiments：Single-Phase & Multi-Phase
+- **一、 Multi-Phase Experiments：In the MPLL folder**
+- **二、Single-Phase Experiments：In the LiTS2017 folder**
 
 ##  一、Multi-Phase Experiments
 
