@@ -15,9 +15,12 @@ Contrast-enhanced CT (CECT), which captures dynamic tissue attenuation changes t
 The complementary nature of these phases presents a valuable opportunity to improve segmentation performance through multi-phase fusion. 
 
 ## Existing Fusion Method： 
-Input-Level Fusion: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images.
-Feature-Level Fusion: Employs self-attention to dynamically weight phase-specific features.
-Decision-Level Fusion: Fuses predictions from individual phases and the fusion branch.
+
+- **Input-Level Fusion: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images.**
+ 
+- **Feature-Level Fusion: Employs self-attention to dynamically weight phase-specific features.**
+
+- **Decision-Level Fusion: Fuses predictions from individual phases and the fusion branch.**
 
 ## The existing fusion methods's shortcoming：
 
