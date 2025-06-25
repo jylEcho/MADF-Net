@@ -6,9 +6,8 @@
 | [LiTS2017](https://competitions.codalab.org/competitions/17094)| Single (PV)  | 131     | Publicly available | -                   |  
 | MPLL    | Multi (ART/PV/DL) | 141   | ITK-SNAP        | B-spline            |  
 
-<div align="center">
-  <img src="https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png?raw=true" width="500">
-</div>
+<img src="https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png?raw=true" width="500">
+
 
 ## Core Innovations： 
 ### MADF-Net Architecture  
