@@ -13,11 +13,11 @@
 Contrast-enhanced CT (CECT), which captures dynamic tissue attenuation changes through contrast agent administration at different time points, offers a more informative alternative. It typically includes non-contrast (NC), arterial (ART), portal venous (PV), and delayed (DL) phases. These phases provide complementary information such as early vascular features, clear hepatic parenchyma structure, hyper-perfused regions, and delayed enhancement or washout effects, all of which help delineate lesion boundaries and improve segmentation accuracy. 
 
 The complementary nature of these phases presents a valuable opportunity to improve segmentation performance through multi-phase fusion. 
-**The existing fusion approaches's shortcoming：**
+## The existing fusion approaches's shortcoming：
 
 Treating each phase equally during fusion, failing to account for their clinical significance and complementary properties. This results in suboptimal performance, especially in scenarios with blurred lesion boundaries or small tumors.
 
-**we achieved:**
+## We achieved:
 
 - **Conducts a systematic analysis of the segmentation performance of different contrast-enhanced CT phases using a clinical multi-phase liver tumor dataset (MPLL) collected from the First Affiliated Hospital of USTC. The results show that the PV phase contributes most significantly to segmentation performance, underscoring its importance both clinically and empirically.**
 
