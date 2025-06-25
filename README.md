@@ -27,17 +27,6 @@ Treating each phase equally during fusion, failing to account for their clinical
 
 Extensive experiments on two benchmark datasets, LiTS2017 and MPLL, demonstrate the superiority of our proposed method, which significantly outperforms existing state-of-the-art approaches.
 
-
-
-
-### MADF-Net Architecture  
-- **Input-Level Fusion**: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images. 
-- **Feature-Level Fusion**: Employs self-attention to dynamically weight phase-specific features.
-- **Decision-Level Fusion**: Fuses predictions from individual phases and the fusion branch.  
-
-### Boundary-Enhanced Dynamic Loss (BED-Loss)  
-Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. The initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
-
 ## Experiments：Single-Phase & Multi-Phase
 - **一、 Multi-Phase Experiments：In the MPLL folder**
 - **二、Single-Phase Experiments：In the LiTS2017 folder**
@@ -80,7 +69,7 @@ pydensecrf==1.0rc3
 
 ### 3、Training Process
 
-3.1  The model is trained by running ./bash/train_multiphase.sh (You can modify the hyperparameters as prompted.), and the weights of its runs are stored in the model_out folder.
+3.1  The model is trained by running ./bash/train_multiphase.sh (You can modify the hyperparameters as prompted.), and the weights of its runs are stored in the model_out folder. If using BED-Loss training, the initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
 ### 4、Evalution
 
@@ -112,7 +101,7 @@ You can jump to the download link of the LiTS2017 dataset according to the link 
 
 ### 3、Training Process
 
-3.1  The model is trained by running ./LiTS2017/train/train.py (You can modify the hyperparameters as prompted.), and the weights of its runs are stored.
+3.1  The model is trained by running ./LiTS2017/train/train.py (You can modify the hyperparameters as prompted.), and the weights of its runs are stored. If using BED-Loss training, the initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
 ### 4、Evalution
 
