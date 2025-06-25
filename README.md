@@ -14,7 +14,7 @@ Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting.
 1. Multi-Phase Experiments：
 2. Single-Phase Experiments：To
 The initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
-
+ 
 ## Experimental Results  
 ### Datasets  
 | Dataset | Phases       | Samples | Annotation Tool | Registration Method |  
