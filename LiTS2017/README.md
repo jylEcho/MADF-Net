@@ -1,12 +1,4 @@
 # MADF-Net: Multi-phase Attentional Deep Fusion Network for Liver Tumor Segmentation  
-## Core Innovations： 
-### MADF-Net Architecture  
-- **Input-Level Fusion**: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images. 
-- **Feature-Level Fusion**: Employs self-attention to dynamically weight phase-specific features.
-- **Decision-Level Fusion**: Fuses predictions from individual phases and the fusion branch.  
-
-### Boundary-Enhanced Dynamic Loss (BED-Loss)  
-Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. The initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
 ## Datasets  
 | Dataset | Phases       | Samples | Annotation Tool | Registration Method |  
@@ -14,11 +6,39 @@ Combines Cross-Entropy, Dice, and Boundary Loss with adaptive weighting. The ini
 | [LiTS2017](https://competitions.codalab.org/competitions/17094)| Single (PV)  | 131     | Publicly available | -                   |  
 | MPLL    | Multi (ART/PV/DL) | 141   | ITK-SNAP        | B-spline            |  
 
+<img src="https://github.com/jylEcho/MADF-Net/blob/main/image/Dataset.png?raw=true" width="500">
+
+## Contrast-Enhanced CT (CECT)： 
+
+Contrast-enhanced CT (CECT), which captures dynamic tissue attenuation changes through contrast agent administration at different time points, offers a more informative alternative. It typically includes non-contrast (NC), arterial (ART), portal venous (PV), and delayed (DL) phases. These phases provide complementary information such as early vascular features, clear hepatic parenchyma structure, hyper-perfused regions, and delayed enhancement or washout effects, all of which help delineate lesion boundaries and improve segmentation accuracy. 
+
+The complementary nature of these phases presents a valuable opportunity to improve segmentation performance through multi-phase fusion. 
+
+## Existing Fusion Method： 
+
+- **Input-Level Fusion: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images.**
+ 
+- **Feature-Level Fusion: Employs self-attention to dynamically weight phase-specific features.**
+
+- **Decision-Level Fusion: Fuses predictions from individual phases and the fusion branch.**
+
+## The existing fusion methods's shortcoming：
+
+Treating each phase equally during fusion, failing to account for their clinical significance and complementary properties. This results in suboptimal performance, especially in scenarios with blurred lesion boundaries or small tumors.
+
+## We achieved:
+
+- **Conducts a systematic analysis of the segmentation performance of different contrast-enhanced CT phases using a clinical multi-phase liver tumor dataset (MPLL) collected from the First Affiliated Hospital of USTC. The results show that the PV phase contributes most significantly to segmentation performance, underscoring its importance both clinically and empirically.**
+
+- **Based on these findings, we propose MADF-Net, a multi-phase attention-based fusion network that integrates features from the ART, PV, and DL phases, enabling deep inter-phase feature interaction across multiple stages to enhance segmentation performance.**
+
+- **We design a novel dynamically weighted loss function, BED-Loss, which integrates regional and boundary information to improve the model’s sensitivity to tumor contours.**
+
+Extensive experiments on two benchmark datasets, LiTS2017 and MPLL, demonstrate the superiority of our proposed method, which significantly outperforms existing state-of-the-art approaches.
+
 ## Experiments：Single-Phase & Multi-Phase
 - **一、 Multi-Phase Experiments：In the MPLL folder**
 - **二、Single-Phase Experiments：In the LiTS2017 folder**
-
-
 
 ##  一、Multi-Phase Experiments
 
@@ -58,7 +78,7 @@ pydensecrf==1.0rc3
 
 ### 3、Training Process
 
-3.1  The model is trained by running ./bash/train_multiphase.sh (You can modify the hyperparameters as prompted.), and the weights of its runs are stored in the model_out folder.
+3.1  The model is trained by running ./bash/train_multiphase.sh (You can modify the hyperparameters as prompted.), and the weights of its runs are stored in the model_out folder. If using BED-Loss training, the initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
 ### 4、Evalution
 
@@ -86,11 +106,11 @@ You can jump to the download link of the LiTS2017 dataset according to the link 
 
 - 2.1  Run boundary_map/liver_distance_map.py and boundary_map/tumor_distance_map.py to generate the boundary maps for liver and tumor, respectively.
 
-- 2.2  Using the ./LiTS2017/dataset/dataset.py loader if you want to train without loading the distance map, or the ./LiTS2017/dataset/dataset_boundarymap.py loader if you want to load the distance map during training.
+- 2.2  You can modify the ./LiTS2017/dataset/dataset.py data loader to decide whether to add liver or tumor distance map.
 
 ### 3、Training Process
 
-3.1  The model is trained by running ./LiTS2017/train/train.py (You can modify the hyperparameters as prompted.), and the weights of its runs are stored.
+3.1  The model is trained by running ./LiTS2017/train/train.py (You can modify the hyperparameters as prompted.), and the weights of its runs are stored. If using BED-Loss training, the initial weights of BED-Loss in Eq. (8) are set to \(\alpha\)=0.49, \(\beta \)=0.49 and \(\gamma\)=0.02. If the training loss plateaus for 10 epochs, the weights are dynamically adjusted to a 4:4:2 ratio, and you can download the model weights from the Google Drive link above, and if the link is broken, you can contact the corresponding author to obtain and update the URL.
 
 ### 4、Evalution
 
