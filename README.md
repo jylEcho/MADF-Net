@@ -84,6 +84,10 @@ You can jump to the download link of the LiTS2017 dataset according to the link 
 
 ### 2、Generate distance map
 
+- 2.1  Run boundary_map/liver_distance_map.py and boundary_map/tumor_distance_map.py to generate the boundary maps for liver and tumor, respectively.
+
+- 2.2  Using the ./LiTS2017/dataset/dataset.py loader if you want to train without loading the distance map, or the ./LiTS2017/dataset/dataset_boundarymap.py loader if you want to load the distance map during training.
+- 
 ### 3、Training Process
 
 ### 4、Evalution
