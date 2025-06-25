@@ -3,23 +3,33 @@
 ## Pre-trained Weights  
 The weights of the pre-trained MADF-Net in 1P、2P、3P comparative analysis could be downloaded [Here](https://drive.google.com/drive/folders/1FSgOOqEkdjfBTvYudSf9NAxIwG3CxWxW?usp=drive_link)  
 
-## Installation (创建环境相关)
+## 1、Installation 
 1、environments:Linux 5.4.0
 
 2、Create a virtual environment: conda create -n environment_name python=3.8 -y and conda activate environment_name.
 
 3、Install Pytorch : pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 --index-url https://download.pytorch.org/whl/cu117
 
-## Pre-process （先运行data_prepare/split.py进行划分、再运行data_prepare/generate_2D_train.py和data_prepare/generate_2D_test.py）
-First run data_prepare/split.py for period division, then run data_prepare/generate_2D_train.py and data_prepare/generate_2D_test.py for period data processing.
+## 2、Pre-process 
 
-## Generate distance map (分别运行boundary_map/liver_distance_map.py和boundary_map/tumor_distance_map.py分别为liver 和 tumor 生成boundary map，dataset/dataset_multiphase.py和dataset/dataset_multiphase_boundarymap.py分别对应训练时不加载距离图和加载距离图的数据加载器)
-- 1.Then run boundary_map/liver_distance_map.py and boundary_map/tumor_distance_map.py to generate the boundary maps for liver and tumor, respectively.
-- 2.Using the dataset/dataset_multiphase.py loader if you want to train without loading the distance map, or the dataset/dataset_multiphase_boundarymap.py loader if you want to load the distance map during training.
-## Training Process（运行bash/train_multiphase.sh，运行中的权重保存在在model_out文件夹中）
-The model is trained by running bash/evaluate.sh, and the weights of its runs are stored in the model_out folder.
-## Evalution（运行bash/evaluate.sh，把训练权重和测试数据地址在evaluate.sh中进行替换，得到测试结果，结果保存在model_out中）
-Next, we need to test the model, first run bash/evaluate.sh, replace the training weights and test data addresses in evaluate.sh. The test results will be saved in the model_out folder for viewing.
+2.1  First run ./data_prepare/split.py for Data partition.
+
+2.2  run ./data_prepare/generate_2D_train.py and data_prepare/generate_2D_test.py for period data processing, then you can see the result in ./processed/train and ./processed/test
+
+## 3、Generate distance map
+
+- 3.1  Run boundary_map/liver_distance_map.py and boundary_map/tumor_distance_map.py to generate the boundary maps for liver and tumor, respectively.
+
+- 3.2  Using the ./dataset/dataset_multiphase.py loader if you want to train without loading the distance map, or the dataset/dataset_multiphase_boundarymap.py loader if you want to load the distance map during training.
+
+## 4、Training Process（运行bash/train_multiphase.sh，运行中的权重保存在在model_out文件夹中）
+
+4.1  The model is trained by running ./bash/train_multiphase.sh (You can modify the hyperparameters as prompted.), and the weights of its runs are stored in the model_out folder.
+
+## 5、Evalution（运行bash/evaluate.sh，把训练权重和测试数据地址在evaluate.sh中进行替换，得到测试结果，结果保存在model_out中）
+
+5.1  Run ./bash/evaluate.sh, replacing the training weights and test data addresses in evaluate.sh. The test results will be saved in the model_out folder for viewing.
+
 ## Core Innovations  
 ### 1. MADF-Net Architecture  
 - **Input-Level Fusion**: Concatenates arterial (ART), portal venous (PV), and delayed (DL) phase CT images. 
